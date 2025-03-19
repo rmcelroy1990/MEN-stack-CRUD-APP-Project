@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floral Shops Index</title>
+  </head>
+  <body>
+    <h1>All Shops</h1>
+    <ul>
+        <% shops.forEach(shop => { %>
+          <li><%= shop.name %></li>
+        <% }); %>
+      </ul>
+    <a href="/shops/new">Add New Shop</a>
+  </body>
+</html>
