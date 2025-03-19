@@ -9,7 +9,9 @@
     <h1>All Shops</h1>
     <ul>
         <% shops.forEach(shop => { %>
-          <li><%= shop.name %></li>
+          <li>
+            <a href="/shops/<%= shop._id %>"><%= shop.name %></a>
+          </li>
         <% }); %>
       </ul>
     <a href="/shops/new">Add New Shop</a>

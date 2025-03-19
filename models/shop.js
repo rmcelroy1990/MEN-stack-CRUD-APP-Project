@@ -5,6 +5,6 @@ const shopSchema = new mongoose.Schema({
     offersDelivery: Boolean,
   });
 
-  const Shop = mongoose.model("Shop", shopSchema);
+const Shop = mongoose.model("Shop", shopSchema);
 
 module.exports = Shop;

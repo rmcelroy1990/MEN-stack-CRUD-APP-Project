@@ -38,6 +38,11 @@ app.get("/shops/new", (req, res) => {
   res.render("shops/new.ejs");
 })
 
+app.get("/shops/:shopId", async (req, res) => {
+  const foundShop = await Shop.findById(req.params.shopId);
+  res.render("shops/show.ejs", { shop: foundShop });
+});
+
 app.get("/", async (req, res) => {
   res.send("hello, friend!");
 });

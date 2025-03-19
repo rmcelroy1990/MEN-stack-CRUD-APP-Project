@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= shop.name %>></title> <!-- Dynamic title based on fruit name -->
+  </head>
+  <body>
+    <h1><%= shop.name %></h1> <!-- Display fruit name -->
+    <!-- Add more details about the fruit here -->
+    <% if (shop.offersDelivery) { %>
+        <p>This shop offers delivery!</p>
+    <% } else { %>
+        <p>This shop does not offer delivery!</p>
+    <% } %>
+    <a href="/shops/">Back to Shops</a>
+  </body>
+</html>
