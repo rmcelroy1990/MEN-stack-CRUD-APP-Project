@@ -52,6 +52,22 @@ app.delete("/shops/:shopId", async (req, res) => {
   res.redirect("/shops");
 });
 
+app.get("/shops/:shopId/edit", async (req, res) => {
+  const foundShop = await Shop.findById(req.params.shopId);
+  res.render("shops/edit.ejs", {
+    shop: foundShop,
+  });
+});
+
+app.put("/shops?:shopId", async (req, res) => {
+  if (req.body.offersDelivery === "on" {
+    req.body.offersDelivery = true;
+  } else {
+    req.body.offersDelivery = false;
+  await Shop.findByIdAndUpdate(req.params.shopId, req.body);
+  res.redirect(`/shops/${req.params.shopId}`);
+  });
+})
 app.get("/", async (req, res) => {
   res.send("hello, friend!");
 });
