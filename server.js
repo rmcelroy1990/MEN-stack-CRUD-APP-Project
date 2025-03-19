@@ -2,6 +2,8 @@ const dotenv = require("dotenv"); // require package
 dotenv.config(); // Loads the environment variables from .env file
 const express = require("express");
 const mongoose = require("mongoose");
+const methodOverride = require("method-override");
+const morgan = require("morgan")
 
 const app = express();
 
@@ -14,6 +16,8 @@ mongoose.connection.on("connected", () => {
 const Shop = require("./models/shop.js");
 
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
+app.use(morgan("dev"));
 
 app.get("/", async (req, res) => {
   res.render("index.ejs");
@@ -41,6 +45,11 @@ app.get("/shops/new", (req, res) => {
 app.get("/shops/:shopId", async (req, res) => {
   const foundShop = await Shop.findById(req.params.shopId);
   res.render("shops/show.ejs", { shop: foundShop });
+});
+
+app.delete("/shops/:shopId", async (req, res) => {
+  await Shop.findByIdAndDelete(req.params.shopId);
+  res.redirect("/shops");
 });
 
 app.get("/", async (req, res) => {
