@@ -31,6 +31,13 @@ body {
     min-height: 100%;
 }
 
+#myVideo2 {
+    position: static;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
 .content {
     position: fixed,
 
@@ -38,8 +45,8 @@ body {
 
 /* General styles */
 body {
-    font-family: 'Comic Sans MS', sans-serif; /* Retro and playful font */
-    background-color: #1a1a1a; /* Dark background for a moody effect */
+    font-family: 'Oswald', sans-serif; /* Retro and playful font */
+    background-color: #f6ac7a; 
     color: #d0f0c0; /* Light green text for contrast */
     padding: 20px;
     margin: 0;
@@ -56,7 +63,7 @@ body {
   
   /* Form styling */
   .shop-form {
-    background-color: #282828; /* Dark background for the form */
+    
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.6); /* Neon green glow effect */
@@ -124,5 +131,56 @@ body {
   .back-link:hover {
     text-decoration: underline;
     color: #ff3399;
+  }
+  
+  /* Ensure the body and html take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set up the video background */
+  #background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire viewport */
+    z-index: -1; /* Place the video behind other elements */
+  }
+  
+  /* Style the content */
+  .content {
+    position: relative;
+    z-index: 1; /* Ensure content is above the video */
+    padding: 20px;
+    text-align: center;
+    color: white; /* Text color */
+  }
+  
+  h1 {
+    font-family: 'Spicy Rice', cursive;
+    font-size: 3rem;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+  }
+  
+  a:hover {
+    text-decoration: underline;
   }
   
