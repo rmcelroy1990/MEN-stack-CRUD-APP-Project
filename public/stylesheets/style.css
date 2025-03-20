@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap");
+
+body {
+    font-family: "Spicy Rice", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100vw;
+  }
+  
+  h1 {
+    color: #769642;
+    font-size: 3.6em;
+        font-family: "Spicy Rice", serif;
+        font-weight: 400;
+        font-style: normal;
+        align-items: center;
+      }      
+
+      p {
+        color:deeppink;
+    
+      }
+
+#myVideo {
+    position: static;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.content {
+    position: fixed,
+
+}
+
+/* General styles */
+body {
+    font-family: 'Comic Sans MS', sans-serif; /* Retro and playful font */
+    background-color: #1a1a1a; /* Dark background for a moody effect */
+    color: #d0f0c0; /* Light green text for contrast */
+    padding: 20px;
+    margin: 0;
+  }
+  
+  /* Header */
+  .page-header h1 {
+    font-size: 3rem;
+    color: #ff80c0; /* Neon pink color inspired by the film's aesthetic */
+    text-align: center;
+    text-shadow: 3px 3px 0px rgba(0, 255, 0, 0.8); /* Neon glow effect */
+    margin-bottom: 40px;
+  }
+  
+  /* Form styling */
+  .shop-form {
+    background-color: #282828; /* Dark background for the form */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.6); /* Neon green glow effect */
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-size: 1.2rem;
+    color: #ff80c0; /* Neon pink */
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"], input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid #ff80c0; /* Neon pink border */
+    border-radius: 4px;
+    background-color: #3a3a3a; /* Slightly lighter dark background */
+    color: #d0f0c0; /* Light green text */
+    font-size: 1.1rem;
+  }
+  
+  input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+  }
+  
+  /* Button */
+  .submit-button {
+    background-color: #ff80c0; /* Neon pink */
+    color: #1a1a1a;
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(255, 128, 192, 0.6); /* Soft neon glow */
+  }
+  
+  .submit-button:hover {
+    background-color: #ff3399; /* Darker neon pink for hover effect */
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .back-link {
+    color: #ff80c0; /* Neon pink */
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+  .back-link:hover {
+    text-decoration: underline;
+    color: #ff3399;
+  }
+  

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Floral Shops Index</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
     <h1>All Shops</h1>
@@ -11,9 +12,10 @@
         <% shops.forEach(shop => { %>
           <li>
             <a href="/shops/<%= shop._id %>"><%= shop.name %></a>
+            
           </li>
         <% }); %>
       </ul>
-    <a href="/shops/new">Add New Shop</a>
+    
   </body>
 </html>

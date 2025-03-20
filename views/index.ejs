@@ -6,11 +6,139 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Floral Shops App</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Spicy Rice', sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      #myVideo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 90%;
+        height: 90%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      h1 {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 5.5em;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+        font-size: 1.2em;
+        color: white;
+        margin-top: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+
+      button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: none;
+        font-size: 1.2em;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: rgba(255, 255, 255, 1);
+      }
+
+      /* Style for the Browse Shops link */
+      a {
+        display: block;
+        text-align: center;
+        font-size: 1.5em;
+        color: white;
+        text-decoration: none;
+        margin-top: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* Center the Browse Shops button over the video */
+      .centered-btn {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5em;
+        color: white;
+        text-decoration: none;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 15px 30px;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .centered-btn:hover {
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+      }
+    #myBtn {
+      position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.2em;
+        padding: 10px 20px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      #myBtn:hover {
+        background-color: rgba(255, 255, 255, 1);
+      }
+    }
+    </style>
   </head>
   <body>
     <h1>LITTLE SHOP of FLOWERS</h1>
-    <p>Let your floral app be a garden of possibilities, where every click cultivates a moment of joy
-    </p>
-    <a href="/shops">Browse Shops</a>
+    <video autoplay muted loop id="myVideo">
+      <source src="1745947-hd_1920_1080_30fps.mp4" type="video/mp4">
+    </video>
+    <p>Let your floral app be a garden of possibilities, where every click cultivates a moment of joy</p>
+    <button id="myBtn" onclick="myFunction()">Pause</button>
+
+    <!-- Centered Browse Shops Button -->
+    <a href="/shops" class="centered-btn">Browse Shops</a>
+
+    <script>
+      var video = document.getElementById("myVideo");
+
+      function myFunction() {
+        if (video.paused) {
+          video.play();
+          document.getElementById("myBtn").innerHTML = "Pause";
+        } else {
+          video.pause();
+          document.getElementById("myBtn").innerHTML = "Play";
+        }
+      }
+    </script>
   </body>
 </html>
