@@ -12,6 +12,9 @@ const app = express();
 
 const authController = import("./controllers/auth.js");
 
+const isSignedIn = require('./middleware/is-signed-in.js');
+const passUserToView = require('./middleware/pass-user-to-view.js');
+
 mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on("connected", () => {
@@ -25,6 +28,8 @@ app.use(methodOverride("_method"));
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "public")));
 
+
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -33,7 +38,7 @@ app.use(
     }),
 );
 
-app.use("/auth", authController);
+
 
 app.get("/", (req, res) => {
   res.render("index.ejs", {
@@ -120,6 +125,8 @@ if (process.env.PORT) {
 } else {
   port = 3001;
 }
+
+app.use("/auth", authController);
 
 app.listen(3001, () => {
   console.log("Listening on port 3001");
