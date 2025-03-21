@@ -1,12 +1,16 @@
-const dotenv = require("dotenv"); // require package
-dotenv.config(); // Loads the environment variables from .env file
+const dotenv = require("dotenv"); 
+dotenv.config(); 
 const express = require("express");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const morgan = require("morgan")
 const path = require("path");
+const session = require('express-session');
+
 
 const app = express();
+
+const authController = import("./controllers/auth.js");
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -21,18 +25,37 @@ app.use(methodOverride("_method"));
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    }),
+);
 
-app.get("/", async (req, res) => {
-  res.render("index.ejs");
+app.use("/auth", authController);
+
+app.get("/", (req, res) => {
+  res.render("index.ejs", {
+    user: req.session.user,
+  });
 });
 
-//GET /shops
+
 app.get("/shops", async (req, res) => {
   const allShops = await Shop.find();
   res.render("shops/index.ejs", { shops: allShops});
 });
 
-//POST /shops
+app.get("/garden-lounge", (req, res) => {
+  if (req.session.user) {
+    res.send(`Welcome to the garden ${req.session.user.username}.`);
+  } else {
+    res.send("Sorry, you haven't been pruned yet for the garden lounge.");
+  }
+});
+
+
 app.post("/shops", async ( req, res) => {
   if (req.body.offersDelivery === "on") {
     req.body.offersDelivery = true;
@@ -43,7 +66,7 @@ app.post("/shops", async ( req, res) => {
   res.redirect("/shops");
 });
 
-// GET /shops/new
+
 app.get("/shops/new", (req, res) => {
     res.render("shops/new.ejs", { shops: allShops});
 });
@@ -97,20 +120,6 @@ if (process.env.PORT) {
 } else {
   port = 3001;
 }
-
-const authController = require("./controllers/auth.js");
-
-app.use("/auth", authController);
-
-router.get("/sign-up", (req, res) => {
-  res.render("auth/sign-up.ejs");
-});
-
-
-// app.listen(port, () => {
-//   console.log(`The express app is ready on port ${port}!`);
-// });
-
 
 app.listen(3001, () => {
   console.log("Listening on port 3001");

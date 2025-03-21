@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= shop.name %>></title> <!-- Dynamic title based on shop name -->
+    <title><%= shop.name %>></title> 
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,8 +11,8 @@
   </head>
   <body>
     <h3>"A weed is but an unloved flower"</h3>
-    <h1><%= shop.name %></h1> <!-- Display fruit name -->
-    <!-- Add more details about the fruit here -->
+    <h1><%= shop.name %></h1> 
+    
     <% if (shop.offersDelivery) { %>
         <p>This shop offers delivery!</p>
     <% } else { %>
