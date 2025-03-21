@@ -1,11 +1,13 @@
-<b><h1><p align="center"> Little Shop of Flowers</b><h1> </p>
+<b><h1><p align="center"> 🌸🌼🌻Little Shop of Flowers🌸🌼🌻</b><h1> </p>
 
 ![giphy](https://github.com/user-attachments/assets/0b60428a-879e-4835-bc12-c2f8f8a7d942)
 
 *<h3><b><p align="center">"Bloom where YOU are Planted"</h3></b>* </p>
 
+💐🌷🌺🪷🌻🌼🌸
 I created a floral shop tracking app. Users will be able to sign in, sign up, and even join our garden lounge, unless you haven't pruned yet! I created this app to keep me inspired by the beauty of nature while working on my task of building an app.
 
+🌷💐🌺🌻🌼🌸
 <b>Getting Started:</b> 
 1.
 2. Project planning link: https://trello.com/invite/b/67d472755795d995d0ee3980/ATTI8bea66ceca2f0aafadecde2120ca3280EFDBA343/my-trello-board
