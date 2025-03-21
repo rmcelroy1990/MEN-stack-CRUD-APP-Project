@@ -150,7 +150,7 @@ html, body {
     z-index: 1; 
     padding: 20px;
     text-align: center;
-    color: white; 
+    color: rgb(233, 37, 251); 
   }
   
   h1 {
@@ -169,7 +169,7 @@ html, body {
   
   a {
     text-decoration: none;
-    color: white;
+    color: rgb(248, 156, 19);
     font-size: 1.2rem;
   }
   

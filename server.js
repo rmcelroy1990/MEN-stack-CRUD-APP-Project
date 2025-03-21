@@ -10,7 +10,7 @@ const session = require('express-session');
 
 const app = express();
 
-const authController = import("./controllers/auth.js");
+const authController = require("./controllers/auth.js");
 
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
