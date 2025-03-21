@@ -21,6 +21,7 @@ app.use(methodOverride("_method"));
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "public")));
 
+
 app.get("/", async (req, res) => {
   res.render("index.ejs");
 });
@@ -89,6 +90,26 @@ app.put("/shops/:shopId", async (req, res) => {
 app.get("/", async (req, res) => {
   res.send("hello, friend!");
 });
+
+let port;
+if (process.env.PORT) {
+  port = process.env.PORT;
+} else {
+  port = 3001;
+}
+
+const authController = require("./controllers/auth.js");
+
+app.use("/auth", authController);
+
+router.get("/sign-up", (req, res) => {
+  res.render("auth/sign-up.ejs");
+});
+
+
+// app.listen(port, () => {
+//   console.log(`The express app is ready on port ${port}!`);
+// });
 
 
 app.listen(3001, () => {
